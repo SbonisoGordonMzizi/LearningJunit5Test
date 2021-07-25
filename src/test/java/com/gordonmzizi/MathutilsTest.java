@@ -4,8 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class MathutilsTest {
     Mathutils mathutils;
@@ -40,5 +41,15 @@ class MathutilsTest {
         int expected = 2;
         double actual = mathutils.multiply(2,1);
         assertEquals(expected,actual,"multiply two value and return sum");
+    }
+
+    @Test
+    void ArrayTest(){
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Bob");
+        expected.add("Vice");
+
+        ArrayList<String> actual = mathutils.users("Bob","Vice");
+        assertIterableEquals(expected,actual,"Check Two array for equality");
     }
 }
