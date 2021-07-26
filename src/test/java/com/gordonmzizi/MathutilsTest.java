@@ -3,8 +3,10 @@ package com.gordonmzizi;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,5 +53,10 @@ class MathutilsTest {
 
         ArrayList<String> actual = mathutils.users("Bob","Vice");
         assertIterableEquals(expected,actual,"Check Two array for equality");
+    }
+
+    @Test
+    public void testingMockito(){
+        Calendar calendar = Mockito.mock(Calendar.class);
     }
 }
